@@ -11,14 +11,14 @@ import org.opencv.imgproc.Imgproc;
 
 import ij.ImagePlus;
 
-public class Main {
+public class Rectification {
 	private double v;
 	private Mat vt, t, A, Atemp, HA, HP, srcImg, affImg, destImg;
 	private Picture picture;
 
 	public static void main(String[] args) {
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-		Main main = new Main();
+		Rectification main = new Rectification();
 		ImagePlus srcImage = new ImagePlus("res/KFZKennzeichen01.jpg");
 		main.srcImg = Imgcodecs.imread("res/KFZKennzeichen01.jpg");
 		main.affImg = Mat.zeros(main.srcImg.size(), main.srcImg.type());
